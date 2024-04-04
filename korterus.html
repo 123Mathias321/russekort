@@ -1,21 +1,88 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Poller+One&family=Russo+One&display=swap"
+    rel="stylesheet">
+
+<head>
+    <style>
+        #russekort {
+            width: 50vw;
+            height: 50vh;
+            background-color: rgb(255, 0, 0);
+            background-image: radial-gradient(closest-side at 50% 50%, white, red);
+
+            font-family: "Poller One", serif;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        button {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
 <body>
-    <a href="http://127.0.0.1:8080/epost/epost.html">link</a>
-    <input type="hidden" name="_captcha" value="false">
-    <form action="https://formsubmit.co/mdbraten@gmail.com" method="POST">
-        <input placeholder = "navn" type="text" name="name" required>
-        <input placeholder = "epost" type="email" name="email" required>
-        <textarea name="melding" id=""></textarea>
-        <input type="submit">Send</input>
-    </form>
-
     <div id="russekort"></div>
-</body>
-<style>
-    #russekort {
-        width: 50vw;
-        height: 50vh;
-        background-color: red;
-        background-image: radial-gradient(farthest-corner at 50% 50%, white, red);
+    <button id="kort">Tilfeldig</button>
+    <button id="svart">svart</button>
+    <button id="blaa">blå</button>
+    <button id="rod">rod</button>
+    <button id="baked">BAKED OUT!!!!!</button>
 
-    }
-</style>
+
+
+
+    <script>
+        let kortEl = document.querySelector("#kort")
+        let russekortEl = document.querySelector("#russekort")
+        let blaaEl = document.querySelector("#blaa")
+        let svartEl = document.querySelector("#svart")
+        let bakedOutEl = document.querySelector("#baked")
+        let rodEl = document.querySelector("#rod")
+        kortEl.addEventListener("click", farge)
+        blaaEl.addEventListener("click", blaa)
+        svartEl.addEventListener("click", svart)
+        rodEl.addEventListener("click", rod)
+        bakedOutEl.addEventListener("click", bakedOut)
+
+        function rod() {
+            russekortEl.style.backgroundImage = `radial-gradient(closest-side at 50% 50%, white, rgb(${255}, ${0}, ${0}))`;
+
+
+        }
+
+
+        function blaa() {
+            russekortEl.style.backgroundImage = `radial-gradient(closest-side at 50% 50%, white, rgb(${0}, ${0}, ${255}))`;
+            russekortEl.innerHTML = "Hallo på do"
+
+
+        }
+        function svart() {
+            russekortEl.style.backgroundImage = `radial-gradient(farthest-corner at 50% 50%, white, rgb(${0}, ${0}, ${0}))`;
+
+
+        }
+
+
+        function farge() {
+            let r = Math.floor(Math.random() * 256)
+            let g = Math.floor(Math.random() * 256)
+            let b = Math.floor(Math.random() * 256)
+            russekortEl.style.backgroundImage = `radial-gradient(closest-side at 50% 50%, white, rgb(${r}, ${g}, ${b}))`;
+        }
+        function tall() {
+            return Math.floor(Math.random() * 256)
+        }
+
+        function bakedOut() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(farthest-corner at 50% 50%, white, rgb(${tall()}, ${tall()}, ${tall()}),
+         rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()},
+          ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}))`;
+        }
+    </script>
+</body>
