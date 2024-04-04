@@ -1,0 +1,421 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Amita:wght@400;
+700&family=Freckle+Face&family=Gamja+Flower&family=Graduate&family=Noto+Sans+Anatolian+Hieroglyphs&family=Poller+One&family=Russo+One&display=swap"
+    rel="stylesheet">
+
+<head>
+
+    <div class="input">
+
+        <form action="https://formsubmit.co/mdbraten@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="submit" onclick="screenshot()" value="Send">
+            <input type="hidden" id="bildeData" name="bildeData">
+        </form>
+
+
+
+
+        <p>skriv navn</p>
+        <input type="text" name="navn" id="navn" placeholder="navn" class="info">
+
+        <p>skriv inn en adresse</p>
+        <input type="text" name="adresse" id="adresse" placeholder="adresse" class="info">
+
+        <p>skriv inn telefonnummer</p>
+        <input type="text" name="adresse" id="telefonnummer" placeholder="telefonnummer" class="info">
+
+        <p>velg skole</p>
+        <select name="skole" id="skole" class="info">
+            <option value="#">velg skole</option>
+            <option value="mailand">Mailand</option>
+            <option value="grønn">Lørenskog</option>
+            <option value="blå">Strømmen</option>
+            <option value="lillestrom">Lillestrøm</option>
+
+        </select>
+
+        <div class="radio">
+
+            <label for="rod">Rød</label><br>
+            <input type="radio" id="rod" name="farge" value="rod">
+
+            <label for="blaa">Blå</label><br>
+            <input type="radio" id="blaa" name="farge" value="blaa">
+
+            <label for="svart">Svart</label>
+            <input type="radio" id="svart" name="farge" value="svart">
+
+            <label for="random">tilfeldig</label>
+            <input type="radio" id="random" name="farge" value="random">
+
+        </div>
+
+        <div class="knappDisplay">
+            <button class="knapp" id="bildeKnapp">nytt bilde</button>
+            <button class="knapp" id="sitatKnapp">nytt sitat</button>
+        </div>
+    </div>
+
+
+    <style>
+        .radio {
+            display: flex;
+            flex-direction: row;
+            margin-block: 10px;
+
+        }
+
+        #bilde {
+            height: 15rem;
+            width: 11.55rem;
+            object-fit: cover;
+            object-position: 10000;
+            transform: rotate(-15deg);
+            border: 5px solid black;
+            box-shadow: 10px 10px;
+
+        }
+
+        .input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+            height: auto;
+            align-items: center;
+            border: 1px black solid;
+            margin-inline: auto;
+            background-color: antiquewhite;
+            margin-bottom: 5px;
+
+        }
+
+        .info {
+            color: none;
+            margin: 0;
+            width: 50%;
+        }
+
+        .knapp {
+            margin: 10px;
+            margin-inline: 10px;
+            color: white;
+            background-color: orange;
+            transform: scale(1.25);
+        }
+
+        .knappDisplay {
+            display: inline;
+        }
+
+
+
+
+
+
+
+        body {
+            margin-inline: 25%;
+        }
+
+        #russekort {
+            font-family: "Graduate", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 40px;
+            width: 50vw;
+            height: 50vh;
+            background-color: red;
+            background-image: radial-gradient(closest-side at 50% 50%, white, red);
+            display: grid;
+            column-gap: 0px;
+            row-gap: 0px;
+            grid-template-columns: repeat((1/38)%, 38) grid-template-rows: repeat((50/22)vh, 22)
+        }
+
+        .skole {
+            grid-column-start: 1;
+            grid-column-end: 38;
+            grid-row-start: 1;
+            grid-row-end: 4;
+            font-size: large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+            text-shadow: -2px 0 black;
+
+
+        }
+
+        .bilde {
+            grid-column-start: 1;
+            grid-column-end: 20;
+            grid-row-start: 4;
+            grid-row-end: 22;
+            font-size: xx-large;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 3rem;
+            text-shadow: -2px 0 black;
+
+            height: 13rem;
+            width: 10rem;
+            object-fit: cover;
+            object-position: 10000;
+            transform: rotate(-15deg);
+            border: 5px solid black;
+            box-shadow: 10px 10px;
+        }
+
+        .typeruss {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 4;
+            grid-row-end: 11;
+            font-size: xx-large;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            color: white;
+            padding: 65px;
+            font-size: 35px;
+            text-shadow: -5px 0 black;
+            overflow: hidden;
+            white-space: nowrap;
+
+
+        }
+
+        .navnTekst {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 11;
+            grid-row-end: 12;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+
+        .adresseTekst {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 12;
+            grid-row-end: 17;
+            font-size: large;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+
+        .sitatTekst {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 17;
+            grid-row-end: 22;
+            font-size: medium;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            text-shadow: -2px 0 black;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="russekort">
+        <p class="skole">W I L L Y W O L L A - S K O L E N</p>
+        <img class="bilde" src="#"></img>
+        <div class="typeruss">R Ø D R U S S</div>
+        <p class="navnTekst">navn navnesen</p>
+        <p class="adresseTekst">addresse</p>
+        <div class="sitatTekst">morsomt sitat</div>
+    </div>
+
+
+
+
+
+    <script src="henteBildeSitat.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+
+    <script>
+        henteInfo()
+
+        function screenshot() {
+            var kort = document.getElementById('russekort');
+            html2canvas(kort).then(function (canvas) {
+                var bildeData = canvas.toDataURL('image/png');
+                document.getElementById('bildeData').value = bildeData;
+                document.getElementById('myForm').submit();
+            });
+        }
+
+
+        let bildeKnappEl = document.querySelector("#bildeKnapp")
+        let sitatKnappEl = document.querySelector("#sitatKnapp")
+
+        let russekortEl = document.querySelector("#russekort")
+        let typerussEl = document.querySelector(".typeruss")
+
+        let bildeEl = document.querySelector(".bilde")
+        let sitatEl = document.querySelector(".sitatTekst")
+
+
+
+        let navnEl = document.querySelector("#navn")
+        let adresseEl = document.querySelector("#adresse")
+        let telefonnummerEl = document.querySelector("#telefonnummer")
+
+        let navnTekstEl = document.querySelector(".navnTekst")
+        let adresseTekstEl = document.querySelector(".adresseTekst")
+        let telefonnummerTekstEl = document.querySelector("#telefonnummerTekst")
+        let skoleTekstEl = document.querySelector(".skole")
+
+        navnEl.addEventListener("input", visNavn)
+        adresseEl.addEventListener("input", visAdresse)
+        telefonnummerEl.addEventListener("input", visTelefonNummer)
+
+        function visNavn() {
+            navnTekstEl.innerHTML = navnEl.value
+            console.log("visnavn")
+            console.log(navnEl.value)
+
+        }
+        function visAdresse() {
+            adresseTekstEl.innerHTML = adresseEl.value
+            console.log("visAdd")
+        }
+        function visTelefonNummer() {
+            telefonnummerTekstEl.innerHTML = telefonnummerEl.value
+            console.log("visTlf")
+        }
+
+
+        //radio
+
+
+
+
+
+        let src = null
+        let sitat = null
+        let tilf = Math.floor(Math.random() * 9)
+
+
+        async function info() {
+            await henteInfo()
+            src = img
+            sitat = jokes.jokes[tilf].joke
+        }
+
+        bildeKnappEl.addEventListener("click", endreBilde)
+        sitatKnappEl.addEventListener("click", endreSitat)
+
+        async function endreBilde() {
+            await info()
+            img = bildeEl.src = img
+        }
+
+        async function endreSitat() {
+            await info()
+            sitatEl.innerHTML = sitat
+        }
+
+
+        function tall() {
+            return Math.floor(Math.random() * 256)
+        }
+
+        function svart() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(farthest-corner at 50% 50%, white, rgb(${0}, ${0}, ${0}))`;
+            typerussEl.innerHTML = "S V A R T R U S S"
+            sitatEl.style.color = "black"
+
+        }
+
+        function rod() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(closest-side at 50% 50%, white, rgb(${255}, ${0}, ${0}))`;
+            typerussEl.innerHTML = "R Ø D R U S S"
+            sitatEl.style.color = "black"
+
+
+
+        }
+
+
+        function blaa() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(closest-side at 50% 50%, white, rgb(${0}, ${0}, ${255}))`;
+            typerussEl.innerHTML = "B L Å R U S S"
+            sitatEl.style.color = "black"
+
+
+        }
+
+        function random() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(farthest-corner at 50% 50%, white, rgb(${tall()}, ${tall()}, ${tall()}),
+         rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()},
+          ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),
+          rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),
+          rgb(${tall()}, ${tall()}, ${tall()}))`;
+            typerussEl.innerHTML = "S P I R A L R U S S"
+            sitatEl.style.color = "black"
+        }
+
+
+
+        let radioEl = document.querySelector(".radio")
+
+        radioEl.addEventListener("click", sjekkRadio)
+
+        function sjekkRadio(event) {
+
+            let valgtVerdi = event.target.value
+            console.log(valgtVerdi)
+
+            if (valgtVerdi === undefined) {
+                return
+            }
+
+            if (valgtVerdi === "rod") {
+                rod()
+                console.log("rod kjørt")
+            }
+            if (valgtVerdi === "blaa") {
+                blaa()
+                console.log("blaa kjørt")
+            }
+            if (valgtVerdi === "random") {
+                random()
+                console.log("random kjørt")
+            }
+            if (valgtVerdi === "svart") {
+                svart()
+                console.log("svart kjørt")
+            }
+
+
+        }
+
+    </script>
+</body>
