@@ -2,13 +2,20 @@
     <a href="http://127.0.0.1:8080/epost/epost.html">link</a>
     <input type="hidden" name="_captcha" value="false">
     <form action="https://formsubmit.co/mdbraten@gmail.com" method="POST">
-        <input placeholder = "navn" type="text" name="name" required>
-        <input placeholder = "epost" type="email" name="email" required>
+        <input placeholder="navn" type="text" name="name" required>
+        <input placeholder="epost" type="email" name="email" required>
         <textarea name="melding" id=""></textarea>
         <input type="submit">Send</input>
     </form>
 
-    <div id="russekort"></div>
+    <div id="russekort">
+        <div class="skole">willawolla skolen</div>
+        <div class="bilde"> ghij</div>
+        <div class="typeruss">Rødruss</div>
+        <div class="navn">mr Bergersen</div>
+        <div class="adrtlf">fhgyuiogtf</div>
+        <div class="quote">hwbguf</div>
+        
 </body>
 <style>
     #russekort {
@@ -16,6 +23,77 @@
         height: 50vh;
         background-color: red;
         background-image: radial-gradient(farthest-corner at 50% 50%, white, red);
+        display: grid;
+        column-gap: 0px;
+        row-gap: 0px;
+        grid-template-columns: repeat((1/38)%, 38) 
+        grid-template-rows: repeat((50/22)vh, 22)
+    }
 
+    .skole {
+        grid-column-start: 1;
+        grid-column-end: 38;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        font-size:large;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .bilde {
+        grid-column-start: 1;
+        grid-column-end: 20;
+        grid-row-start: 4;
+        grid-row-end: 22;
+        font-size:xx-large;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .typeruss {
+        grid-column-start: 20;
+        grid-column-end: 38;
+        grid-row-start: 4;
+        grid-row-end: 11;
+        font-size:xx-large;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .navn {
+        grid-column-start: 20;
+        grid-column-end: 38;
+        grid-row-start: 11;
+        grid-row-end: 12;
+        font-weight: bold;
+        text-align: right;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .adrtlf {
+        grid-column-start: 20;
+        grid-column-end: 38;
+        grid-row-start: 12;
+        grid-row-end: 17;
+        font-size:large;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        
+    }
+    .quote {
+        grid-column-start: 20;
+        grid-column-end: 38;
+        grid-row-start: 17;
+        grid-row-end: 22;
+        font-size:large;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+        
     }
 </style>
