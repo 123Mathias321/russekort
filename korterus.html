@@ -1,13 +1,106 @@
-<body>
-    <a href="http://127.0.0.1:8080/epost/epost.html">link</a>
-    <input type="hidden" name="_captcha" value="false">
-    <form action="https://formsubmit.co/mdbraten@gmail.com" method="POST">
-        <input placeholder="navn" type="text" name="name" required>
-        <input placeholder="epost" type="email" name="email" required>
-        <textarea name="melding" id=""></textarea>
-        <input type="submit">Send</input>
-    </form>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Poller+One&family=Russo+One&display=swap"
+    rel="stylesheet">
 
+<head>
+    <style>
+        button {
+            height: 100px;
+            width: 100px;
+            font-family: 'Poller One', cursive;
+
+        }
+
+        #russekort {
+            font-family: "Poller One", serif;
+            font-weight: 400;
+            font-style: normal;
+            width: 50vw;
+            height: 50vh;
+            background-color: red;
+            background-image: radial-gradient(closest-side at 50% 50%, white, red);
+            display: grid;
+            column-gap: 0px;
+            row-gap: 0px;
+            grid-template-columns: repeat((1/38)%, 38) grid-template-rows: repeat((50/22)vh, 22)
+        }
+
+        .skole {
+            grid-column-start: 1;
+            grid-column-end: 38;
+            grid-row-start: 1;
+            grid-row-end: 4;
+            font-size: large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .bilde {
+            grid-column-start: 1;
+            grid-column-end: 20;
+            grid-row-start: 4;
+            grid-row-end: 22;
+            font-size: xx-large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .typeruss {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 4;
+            grid-row-end: 11;
+            font-size: xx-large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .navn {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 11;
+            grid-row-end: 12;
+            font-weight: bold;
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .adrtlf {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 12;
+            grid-row-end: 17;
+            font-size: large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+
+        .quote {
+            grid-column-start: 20;
+            grid-column-end: 38;
+            grid-row-start: 17;
+            grid-row-end: 22;
+            font-size: large;
+            text-align: center;
+            margin-top: auto;
+            margin-bottom: auto;
+
+        }
+    </style>
+</head>
+
+<body>
     <div id="russekort">
         <div class="skole">willawolla skolen</div>
         <div class="bilde"> ghij</div>
@@ -15,85 +108,69 @@
         <div class="navn">mr Bergersen</div>
         <div class="adrtlf">fhgyuiogtf</div>
         <div class="quote">hwbguf</div>
-        
-</body>
-<style>
-    #russekort {
-        width: 50vw;
-        height: 50vh;
-        background-color: red;
-        background-image: radial-gradient(farthest-corner at 50% 50%, white, red);
-        display: grid;
-        column-gap: 0px;
-        row-gap: 0px;
-        grid-template-columns: repeat((1/38)%, 38) 
-        grid-template-rows: repeat((50/22)vh, 22)
-    }
+    </div>
+    <button id="kort">Tilfeldig</button>
+    <button id="svart">svart</button>
+    <button id="blaa">blå</button>
+    <button id="rod">rod</button>
+    <button id="baked">BAKED OUT!!!!!</button>
 
-    .skole {
-        grid-column-start: 1;
-        grid-column-end: 38;
-        grid-row-start: 1;
-        grid-row-end: 4;
-        font-size:large;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .bilde {
-        grid-column-start: 1;
-        grid-column-end: 20;
-        grid-row-start: 4;
-        grid-row-end: 22;
-        font-size:xx-large;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .typeruss {
-        grid-column-start: 20;
-        grid-column-end: 38;
-        grid-row-start: 4;
-        grid-row-end: 11;
-        font-size:xx-large;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .navn {
-        grid-column-start: 20;
-        grid-column-end: 38;
-        grid-row-start: 11;
-        grid-row-end: 12;
-        font-weight: bold;
-        text-align: right;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .adrtlf {
-        grid-column-start: 20;
-        grid-column-end: 38;
-        grid-row-start: 12;
-        grid-row-end: 17;
-        font-size:large;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-    .quote {
-        grid-column-start: 20;
-        grid-column-end: 38;
-        grid-row-start: 17;
-        grid-row-end: 22;
-        font-size:large;
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: auto;
-        
-    }
-</style>
+
+
+
+    <script>
+        let kortEl = document.querySelector("#kort")
+        let russekortEl = document.querySelector("#russekort")
+        let blaaEl = document.querySelector("#blaa")
+        let svartEl = document.querySelector("#svart")
+        let bakedOutEl = document.querySelector("#baked")
+        let rodEl = document.querySelector("#rod")
+        kortEl.addEventListener("click", farge)
+        blaaEl.addEventListener("click", blaa)
+        svartEl.addEventListener("click", svart)
+        rodEl.addEventListener("click", rod)
+        bakedOutEl.addEventListener("click", bakedOut)
+
+        function rod() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(closest-side at 50% 50%, white, rgb(${255}, ${0}, ${0}))`;
+
+
+        }
+
+
+        function blaa() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(closest-side at 50% 50%, white, rgb(${0}, ${0}, ${255}))`;
+            russekortEl.innerHTML = "Hallo på do"
+
+
+        }
+        function svart() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(farthest-corner at 50% 50%, white, rgb(${0}, ${0}, ${0}))`;
+
+
+        }
+
+
+        function farge() {
+            let r = Math.floor(Math.random() * 256)
+            let g = Math.floor(Math.random() * 256)
+            let b = Math.floor(Math.random() * 256)
+            russekortEl.style.backgroundImage = `radial-gradient(closest-side at 50% 50%, white, rgb(${r}, ${g}, ${b}))`;
+        }
+        function tall() {
+            return Math.floor(Math.random() * 256)
+        }
+
+        function bakedOut() {
+            russekortEl.style.backgroundImage =
+                `radial-gradient(farthest-corner at 50% 50%, white, rgb(${tall()}, ${tall()}, ${tall()}),
+         rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()},
+          ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),
+          rgb(${tall()}, ${tall()}, ${tall()}),rgb(${tall()}, ${tall()}, ${tall()}),
+          rgb(${tall()}, ${tall()}, ${tall()}))`;
+        }
+    </script>
+</body>
